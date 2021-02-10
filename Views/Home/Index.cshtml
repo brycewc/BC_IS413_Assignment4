@@ -1,9 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page - Top 5 Restaurants";
 }
+@model IEnumerable<string>
 
+<!--Home Page. Pulls from _Layout.cshtml-->
 <div class="text-center">
     <h1 class="display-4">Welcome to the Ultimate Restaurants Website</h1>
     <p>Learn more about the best Provo restaurants at <a href="https://www.femalefoodie.com/restaurant-reviews/best-places-to-eat-in-utah-county/">the Female Foodie</a>.</p>
     <img src="~/img/restaurant.jpg" class="img-fluid" alt="Responsive image">
+</div>
+<br />
+<div class="container">
+    <ul class="list-group">
+        @foreach (string i in Model)
+        {
+            <li class="list-group-item">@i</li>
+        }
+    </ul>
 </div>

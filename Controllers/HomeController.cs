@@ -20,21 +20,16 @@ namespace BC_IS413_Assignment4.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        [HttpGet("Top5Restaurants")]
-        public IActionResult RankedList()
-        {
             //creates a list full of concatenate strings of restaurants to display in the view, just like in the videos 
             List<string> rlist = new List<string>();
 
             foreach (RankedRestaurant r in RankedRestaurant.GetRestaurants())
             {
-                rlist.Add($"#{r.Rank}: {r.RestaurantName}; Best Dish: {r.FavoriteDish}; Address: {r.Address}; Phone Number: {r.Phone}; Website: {r.Website}"); 
+                rlist.Add($"#{r.Rank}: {r.RestaurantName}; Best Dish: {r.FavoriteDish}; Address: {r.Address}; Phone Number: {r.Phone}; Website: {r.Website}");
             }
             return View(rlist);
         }
+
         //Http get for page links
         [HttpGet("AddRestaurant")]
         public IActionResult UserAdd()

@@ -26,7 +26,7 @@ namespace BC_IS413_Assignment4.Models
 
         [DataType(DataType.PhoneNumber)]
         //regular expression to ensure a phone number is entered correctly
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^\d{3}-\d{3}-\d{4}$", ErrorMessage = "Not a valid phone number")]
         public string Phone { get; set; }
         public string? Website { get; set; } = "Coming soon";
 

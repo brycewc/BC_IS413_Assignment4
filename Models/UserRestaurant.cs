@@ -16,7 +16,7 @@ namespace BC_IS413_Assignment4.Models
         public string FavoriteDish { get; set; } = "It's all tasty!";
 
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^\d{3}-\d{3}-\d{4}$", ErrorMessage = "Not a valid phone number")]
         public string Phone { get; set; }
     }
 }
